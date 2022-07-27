@@ -1,0 +1,18 @@
+## Interface: 70100
+## Version: 7.1.0.0
+
+## Title: Masque: SimpleSquare
+## Notes: Simple square skin for Masque.
+## Notes-deDE: Einfacher quadratischer Skin für Masque.
+## Notes-esES: Diseño cuadrada simple para Masque.
+## Notes-esMX: Diseño cuadrada simple para Masque.
+
+## Author: Phanx, MoonWitch
+## X-Credits: Original textures by ScythXIII
+## X-Website: https://github.com/phanx-wow/Masque_SimpleSquare
+## X-Project-ID: masque-simplesquare
+## X-WoWI-ID: 9096
+
+## Dependencies: Masque
+
+Masque_SimpleSquare.lua
