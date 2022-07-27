@@ -41,7 +41,7 @@ MSQ:AddSkin("Caith", {
 	Shape = "Square",
 
 	-- Info
-	Description = L["A larger version of Apathy inspired by Caith UI."],
+	Description = L["inspired by NeavUI."],
 	Version = Version,
 	Author = "StormFX",
 	Websites = Websites,
@@ -109,7 +109,7 @@ MSQ:AddSkin("Caith", {
 		-- SetAllPoints = nil,
 	},
 	Shadow = {
-		Texture = [[Interface\AddOns\Masque_Caith\Textures\Shadow]],
+		Texture = [[Interface\AddOns\Masque_Tecc\Textures\Shadow]],
 		-- TexCoords = {0, 1, 0, 1},
 		Color = {0, 0, 0, 0.5},
 		BlendMode = "BLEND",
@@ -124,10 +124,10 @@ MSQ:AddSkin("Caith", {
 		-- SetAllPoints = nil,
 	},
 	Normal = {
-		Texture = [[Interface\AddOns\Masque_Caith\Textures\Normal]],
+		Texture = [[Interface\AddOns\Masque_Tecc\Textures\Normal]],
 		-- TexCoords = {0, 1, 0, 1},
 		Color = {0.3, 0.3, 0.3, 1},
-		-- EmptyTexture = [[Interface\AddOns\Masque_Caith\Textures\Normal]],
+		-- EmptyTexture = [[Interface\AddOns\Masque_Tecc\Textures\Normal]],
 		-- EmptyCoords = {0, 1, 0, 1},
 		-- EmptyColor = {1, 0.3, 0.3, 0.5},
 		BlendMode = "BLEND",
@@ -209,7 +209,7 @@ MSQ:AddSkin("Caith", {
 		OffsetY = -3,
 	},
 	Checked = {
-		Texture = [[Interface\AddOns\Masque_Caith\Textures\Border]],
+		Texture = [[Interface\AddOns\Masque_Tecc\Textures\Border]],
 		-- TexCoords = {0, 1, 0, 1},
 		Color = {0, 0.7, 0.9, 0.7},
 		BlendMode = "BLEND",
@@ -224,7 +224,7 @@ MSQ:AddSkin("Caith", {
 		-- SetAllPoints = nil,
 	},
 	Border = {
-		Texture = [[Interface\AddOns\Masque_Caith\Textures\Border]],
+		Texture = [[Interface\AddOns\Masque_Tecc\Textures\Border]],
 		-- TexCoords = {0, 1, 0, 1},
 		BlendMode = "BLEND",
 		DrawLayer = "OVERLAY",
@@ -237,7 +237,7 @@ MSQ:AddSkin("Caith", {
 		OffsetY = 0,
 		-- SetAllPoints = nil,
 		Enchant = {
-			Texture = [[Interface\AddOns\Masque_Caith\Textures\Border]],
+			Texture = [[Interface\AddOns\Masque_Tecc\Textures\Border]],
 			-- TexCoords = {0, 1, 0, 1},
 			Color = {0.6, 0.2, 0.9, 1},
 			BlendMode = "BLEND",
@@ -253,8 +253,8 @@ MSQ:AddSkin("Caith", {
 		},
 	},
 	IconBorder = {
-		Texture = [[Interface\AddOns\Masque_Caith\Textures\Border]],
-		-- RelicTexture = [[Interface\AddOns\Masque_Caith\Textures\Border]],
+		Texture = [[Interface\AddOns\Masque_Tecc\Textures\Border]],
+		-- RelicTexture = [[Interface\AddOns\Masque_Tecc\Textures\Border]],
 		-- TexCoords = {0, 1, 0, 1},
 		-- Color = {1, 1, 1, 1},
 		BlendMode = "BLEND",
@@ -269,7 +269,7 @@ MSQ:AddSkin("Caith", {
 		-- SetAllPoints = nil,
 	},
 	SlotHighlight = {
-		Texture = [[Interface\AddOns\Masque_Caith\Textures\Border]],
+		Texture = [[Interface\AddOns\Masque_Tecc\Textures\Border]],
 		-- TexCoords = {0, 1, 0, 1},
 		Color = {0, 0.7, 0.9, 0.7},
 		BlendMode = "BLEND",
@@ -284,7 +284,7 @@ MSQ:AddSkin("Caith", {
 		-- SetAllPoints = nil,
 	},
 	Gloss = {
-		Texture = [[Interface\AddOns\Masque_Caith\Textures\Gloss]],
+		Texture = [[Interface\AddOns\Masque_Tecc\Textures\Gloss]],
 		-- TexCoords = {0, 1, 0, 1},
 		Color = {1, 1, 1, 0.5},
 		BlendMode = "BLEND",
@@ -328,7 +328,7 @@ MSQ:AddSkin("Caith", {
 	},
 	NewAction = {
 		-- Atlas = "bags-newitem",
-		Texture = [[Interface\AddOns\Masque_Caith\Textures\Glow]],
+		Texture = [[Interface\AddOns\Masque_Tecc\Textures\Glow]],
 		Color = {1, 1, 0.8, 1},
 		BlendMode = "BLEND",
 		DrawLayer = "OVERLAY",
@@ -343,7 +343,7 @@ MSQ:AddSkin("Caith", {
 	},
 	SpellHighlight = {
 		-- Atlas = "bags-newitem",
-		Texture = [[Interface\AddOns\Masque_Caith\Textures\Glow]],
+		Texture = [[Interface\AddOns\Masque_Tecc\Textures\Glow]],
 		Color = {1, 1, 0.8, 1},
 		BlendMode = "BLEND",
 		DrawLayer = "OVERLAY",
@@ -357,7 +357,7 @@ MSQ:AddSkin("Caith", {
 		-- SetAllPoints = nil,
 	},
 	AutoCastable = {
-		Texture = [[Interface\AddOns\Masque_Caith\Textures\Indicator]],
+		Texture = [[Interface\AddOns\Masque_Tecc\Textures\Indicator]],
 		-- TexCoords = {0, 1, 0, 1},
 		Color = {1, 1, 0, 1},
 		BlendMode = "BLEND",
@@ -387,7 +387,7 @@ MSQ:AddSkin("Caith", {
 	},
 	NewItem = {
 		-- Atlas = "bags-glow-white",
-		Texture = [[Interface\AddOns\Masque_Caith\Textures\Glow]],
+		Texture = [[Interface\AddOns\Masque_Tecc\Textures\Glow]],
 		-- TexCoords = {0, 1, 0, 1},
 		-- Color = {1, 1, 1, 1},
 		BlendMode = "ADD",
@@ -402,8 +402,8 @@ MSQ:AddSkin("Caith", {
 		-- SetAllPoints = nil,
 	},
 	QuestBorder = {
-		Border = [[Interface\AddOns\Masque_Caith\Textures\Border]],
-		Texture = [[Interface\AddOns\Masque_Caith\Textures\Quest]],
+		Border = [[Interface\AddOns\Masque_Tecc\Textures\Border]],
+		Texture = [[Interface\AddOns\Masque_Tecc\Textures\Quest]],
 		Color = {1, 0.8, 0, 1},
 		BlendMode = "BLEND",
 		DrawLayer = "OVERLAY",
@@ -474,7 +474,7 @@ MSQ:AddSkin("Caith", {
 		OffsetY = 2,
 	},
 	Highlight = {
-		Texture = [[Interface\AddOns\Masque_Caith\Textures\Border]],
+		Texture = [[Interface\AddOns\Masque_Tecc\Textures\Border]],
 		-- TexCoords = {0, 1, 0, 1},
 		Color = {1, 1, 1, 0.3},
 		BlendMode = "ADD",
