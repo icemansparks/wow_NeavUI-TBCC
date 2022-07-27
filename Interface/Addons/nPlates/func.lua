@@ -324,13 +324,13 @@ function nPlates:SetCastbarBorderColor(frame, color)
         return
     end
 
-    if ( frame.castBar.beautyBorder ) then
-        for i, texture in ipairs(frame.castBar.beautyBorder) do
+    if ( frame.CastBar.beautyBorder ) then
+        for i, texture in ipairs(frame.CastBar.beautyBorder) do
             texture:SetVertexColor(color:GetRGB())
         end
      end
-    if ( frame.castBar.Icon.beautyBorder ) then
-        for i, texture in ipairs(frame.castBar.Icon.beautyBorder) do
+    if ( frame.CastBar.Icon.beautyBorder ) then
+        for i, texture in ipairs(frame.CastBar.Icon.beautyBorder) do
             texture:SetVertexColor(color:GetRGB())
         end
      end

@@ -1,37 +1,49 @@
-local addon, nPlates = ...
+local _, nPlates = ...
 
-local playerFaction, _ = UnitFactionGroup("player")
+local englishFaction, localizedFaction = UnitFactionGroup("player")
 local _, playerClass = UnitClass("player")
 
-function nPlates_OnLoad(self)
-    self:RegisterEvent("ADDON_LOADED")
-    self:RegisterEvent("NAME_PLATE_CREATED")
-    self:RegisterEvent("NAME_PLATE_UNIT_ADDED")
-    self:RegisterEvent("PLAYER_TARGET_CHANGED")
-    self:RegisterEvent("PLAYER_REGEN_DISABLED")
-    self:RegisterEvent("PLAYER_REGEN_ENABLED")
-    self:RegisterEvent("RAID_TARGET_UPDATE")
-    self:RegisterEvent("UNIT_AURA")
+nPlatesMixin = {}
+
+nPlates.plateGUIDS = {}
+
+function nPlatesMixin:OnLoad()
+    self.plateGUIDS = {}
+
+    local events = {
+        "ADDON_LOADED",
+        "NAME_PLATE_CREATED",
+        "NAME_PLATE_UNIT_ADDED",
+        "PLAYER_REGEN_DISABLED",
+        "PLAYER_REGEN_ENABLED",
+        "RAID_TARGET_UPDATE",
+        -- "COMBAT_LOG_EVENT_UNFILTERED",
+    }
+
+    FrameUtil.RegisterFrameForEvents(self, events)
 end
 
-function nPlates_OnEvent(self, event, ...)
+function nPlatesMixin:OnEvent(event, ...)
     if ( event == "ADDON_LOADED" ) then
         local name = ...
+
         if ( name == "nPlates" ) then
             nPlates:SetDefaultOptions()
             nPlates:CVarCheck()
+
             self:UnregisterEvent(event)
         end
     elseif ( event == "NAME_PLATE_CREATED" ) then
-        local nameplate = ...
-        nPlates:AddHealthbarText(nameplate)
-        nameplate.UnitFrame.isNameplate = true
+        local namePlateFrameBase = ...
+        nPlates:SetupNameplate(namePlateFrameBase)
     elseif ( event == "NAME_PLATE_UNIT_ADDED" ) then
         local unit = ...
         nPlates:FixPlayerBorder(unit)
-        nPlates:UpdateBuffFrameAnchorsByUnit(unit)
-    elseif ( event == "PLAYER_TARGET_CHANGED" ) then
-        nPlates:UpdateAllBuffFrameAnchors()
+
+        local namePlateFrameBase = C_NamePlate.GetNamePlateForUnit(unit, issecure())
+        nPlates:UpdateNameplate(namePlateFrameBase)
+        -- nPlates.plateGUIDS[UnitGUID(unit)] = unit
+
     elseif ( event == "PLAYER_REGEN_ENABLED" or event == "PLAYER_REGEN_DISABLED" ) then
         if ( not nPlatesDB.CombatPlates ) then
             return
@@ -39,24 +51,44 @@ function nPlates_OnEvent(self, event, ...)
         C_CVar.SetCVar("nameplateShowEnemies", event == "PLAYER_REGEN_DISABLED" and 1 or 0)
     elseif ( event == "RAID_TARGET_UPDATE" ) then
         nPlates:UpdateRaidMarkerColoring()
-    elseif ( event == "UNIT_AURA" ) then
-        local unit = ...
-        nPlates:UpdateBuffFrameAnchorsByUnit(unit)
+    elseif ( event == "COMBAT_LOG_EVENT_UNFILTERED" ) then
+        nPlates:COMBAT_LOG_EVENT_UNFILTERED()
+    end
+end
+
+    -- Hook CompactUnitFrame OnEvent function.
+
+local function CUF_OnEvents(self, event, ...)
+    if ( self:IsForbidden() ) then return end
+    if ( not self.isNameplate ) then return end
+
+    local unit = ...
+
+    if ( event == "PLAYER_TARGET_CHANGED" ) then
+        nPlates:UpdateBuffFrameAnchorsByFrame(self)
+    else
+        -- local unitMatches = unit == self.unit or unit == self.displayedUnit
+		-- if ( unitMatches ) then
+            -- if ( event == "UNIT_AURA") then
+            -- end
+        -- end
     end
 end
 
     -- Update Castbar Time
 
-local function UpdateCastbarTimer(frame)
-    if ( frame.unit ) then
-        if ( frame.castBar.casting ) then
-            local current = frame.castBar.maxValue - frame.castBar.value
+local function UpdateCastbarTimer(self)
+    if ( self:IsForbidden() ) then return end
+
+    if ( self.unit ) then
+        if ( self.CastBar.casting ) then
+            local current = self.CastBar.maxValue - self.CastBar.value
             if ( current > 0 ) then
-                frame.castBar.CastTime:SetText(nPlates:FormatTime(current))
+                self.CastBar.CastTime:SetText(nPlates:FormatTime(current))
             end
         else
-            if ( frame.castBar.value > 0 ) then
-                frame.castBar.CastTime:SetText(nPlates:FormatTime(frame.castBar.value))
+            if ( self.CastBar.value > 0 ) then
+                self.CastBar.CastTime:SetText(nPlates:FormatTime(self.CastBar.value))
             end
         end
     end
@@ -64,119 +96,122 @@ end
 
     --- Skin Castbar
 
-local function UpdateCastbar(frame)
+local function UpdateCastbar(self)
+    if ( self:IsForbidden() ) then return end
 
         -- Castbar Overlay Coloring
 
-    local notInterruptible
+    local name, text, texture, isTradeSkill, notInterruptible
 
-    if ( frame.unit ) then
-        if ( frame.castBar.casting ) then
-            notInterruptible = select(8, UnitCastingInfo(frame.displayedUnit))
+    if ( self.unit ) then
+        if ( self.CastBar.casting ) then
+            name, text, texture, _, _, isTradeSkill, _, notInterruptible = UnitCastingInfo(self.unit)
         else
-            notInterruptible = select(7, UnitChannelInfo(frame.displayedUnit))
+            name, text, texture, _, _, isTradeSkill, notInterruptible = UnitChannelInfo(self.unit)
         end
 
-        if ( UnitCanAttack("player", frame.displayedUnit) ) then
-            if ( notInterruptible ) then
-                nPlates:SetCastbarBorderColor(frame, nPlates.nonInterruptibleColor)
-            else
-                nPlates:SetCastbarBorderColor(frame, nPlates.interruptibleColor)
-            end
+        if ( isTradeSkill or not UnitCanAttack("player", self.unit) ) then
+            nPlates:SetCastbarBorderColor(self, nPlates.defaultBorderColor)
         else
-            nPlates:SetCastbarBorderColor(frame, nPlates.defaultBorderColor)
+            nPlates:UpdateInterruptibleState(self.CastBar, notInterruptible)
         end
     end
 
-        -- Force Icon Texture
-
-    if ( notInterruptible or not frame.castBar.Icon:IsVisible() and frame.castBar.Background ) then
-        frame.castBar.Background:SetTexture([[Interface\Icons\Ability_DualWield]])
-        frame.castBar.Background:Show()
-    else
-        frame.castBar.Background:Hide()
+    if ( self.CastBar.Background ) then
+        self.CastBar.Background:SetShown(not self.CastBar.Icon:IsVisible())
     end
 
         -- Abbreviate Long Spell Names
 
     if ( not nPlates:IsUsingLargerNamePlateStyle() ) then
-        local name = frame.castBar.Text:GetText()
-        if ( name ) then
-            name = nPlates:Abbrev(name, 20)
-            frame.castBar.Text:SetText(name)
-        end
+        self.CastBar.Text:SetText(nPlates:Abbreviate(text))
     end
 end
 
     -- Updated Health Text
 
-hooksecurefunc("CompactUnitFrame_UpdateStatusText", function(frame)
-    if ( frame:IsForbidden() ) then return end
-    if ( not frame.healthBar.value ) then
-        return
+local function UpdateStatusText(self)
+    if ( self:IsForbidden() ) then return end
+    if ( self.statusText ) then return end
+
+    if ( not self.healthBar.value ) then
+        self.healthBar.value = self.healthBar:CreateFontString("$parentHeathValue", "OVERLAY")
+        self.healthBar.value:SetPoint("CENTER", self.healthBar)
+        self.healthBar.value:SetFontObject("nPlate_NameFont10")
     end
 
     local option = nPlatesDB.CurrentHealthOption
 
-    if ( option ~= "HealthDisabled" ) then
-        local health = UnitHealth(frame.displayedUnit)
-        local maxHealth = UnitHealthMax(frame.displayedUnit)
-        local perc = math.floor(100 * (health/maxHealth))
-
-        if ( health > 5 ) then
-            if ( option == "HealthBoth" and perc >= 100 ) then
-                frame.healthBar.value:SetFormattedText("%s", nPlates:FormatValue(health))
-            elseif ( option == "HealthBoth" ) then
-                frame.healthBar.value:SetFormattedText("%s - %s%%", nPlates:FormatValue(health), perc)
-            elseif ( option == "HealthValueOnly" ) then
-                frame.healthBar.value:SetFormattedText("%s", nPlates:FormatValue(health))
-            elseif ( option == "HealthPercOnly" ) then
-                frame.healthBar.value:SetFormattedText("%s%%", perc)
-            else
-                frame.healthBar.value:SetText("")
-            end
-        else
-            frame.healthBar.value:SetText("")
-        end
-
-        frame.healthBar.value:Show()
+    if ( option == "HealthDisabled" ) then
+        self.healthBar.value:Hide()
     else
-        frame.healthBar.value:Hide()
+        local health = UnitHealth(self.displayedUnit)
+        local maxHealth = UnitHealthMax(self.displayedUnit)
+
+        if ( option == "HealthBoth" ) then
+            local perc = math.floor((health/maxHealth) * 100)
+            if ( perc >= 100 ) then
+                self.healthBar.value:SetFormattedText("%s", nPlates:FormatValue(health))
+                self.healthBar.value:Show()
+            else
+                self.healthBar.value:SetFormattedText("%s - %s%%", nPlates:FormatValue(health), perc)
+                self.healthBar.value:Show()
+            end
+        elseif ( option == "PercentHealth" ) then
+            local perc = math.floor((health/maxHealth) * 100)
+            if ( perc >= 100 ) then
+                self.healthBar.value:SetFormattedText("%s", nPlates:FormatValue(health))
+                self.healthBar.value:Show()
+            else
+                self.healthBar.value:SetFormattedText("%s%% - %s", perc, nPlates:FormatValue(health))
+                self.healthBar.value:Show()
+            end
+        elseif ( option == "HealthValueOnly" ) then
+            self.healthBar.value:SetFormattedText("%s", nPlates:FormatValue(health))
+            self.healthBar.value:Show()
+        elseif ( option == "HealthPercOnly" ) then
+            local perc = math.floor((health/maxHealth) * 100)
+            self.healthBar.value:SetFormattedText("%s%%", perc)
+            self.healthBar.value:Show()
+        else
+            self.healthBar.value:Hide()
+        end
     end
-end)
+end
 
     -- Update Health Color
 
-hooksecurefunc("CompactUnitFrame_UpdateHealthColor", function(frame)
-    if ( frame:IsForbidden() ) then return end
-    if ( not frame.isNameplate ) then return end
+local function UpdateHealthColor(self)
+    if ( self:IsForbidden() ) then return end
+    if ( not self.isNameplate ) then return end
 
     local r, g, b
-    if ( not UnitIsConnected(frame.unit) ) then
+    if ( not UnitIsConnected(self.unit) ) then
         r, g, b = 0.5, 0.5, 0.5
     else
-        if ( frame.optionTable.healthBarColorOverride ) then
-            local healthBarColorOverride = frame.optionTable.healthBarColorOverride
+        if ( self.optionTable.healthBarColorOverride ) then
+            local healthBarColorOverride = self.optionTable.healthBarColorOverride
             r, g, b = healthBarColorOverride.r, healthBarColorOverride.g, healthBarColorOverride.b
         else
-            local localizedClass, englishClass = UnitClass(frame.unit)
+            local localizedClass, englishClass = UnitClass(self.unit)
             local classColor = RAID_CLASS_COLORS[englishClass]
-            local raidMarker = GetRaidTargetIndex(frame.displayedUnit)
+            local raidMarker = GetRaidTargetIndex(self.displayedUnit)
 
-            if ( frame.optionTable.allowClassColorsForNPCs or UnitIsPlayer(frame.unit) and classColor and nPlates:UseClassColors(playerFaction, frame.displayedUnit) ) then
-                    r, g, b = classColor.r, classColor.g, classColor.b
-            elseif ( CompactUnitFrame_IsTapDenied(frame) ) then
+            --if ( (self.optionTable.allowClassColorsForNPCs or UnitIsPlayer(self.unit) or UnitTreatAsPlayerForDisplay(self.unit)) and classColor and nPlates:UseClassColors(englishFaction, self.unit) ) then
+            if ( (self.optionTable.allowClassColorsForNPCs or UnitIsPlayer(self.unit)) and classColor and nPlates:UseClassColors(englishFaction, self.unit) ) then
+                r, g, b = classColor.r, classColor.g, classColor.b
+            elseif ( CompactUnitFrame_IsTapDenied(self) ) then
                 r, g, b = 0.1, 0.1, 0.1
             elseif ( nPlatesDB.RaidMarkerColoring and raidMarker ) then
-                local markerColor = nPlates.markerColors[tostring(raidMarker)]
+                local markerColor = nPlates.markerColors[raidMarker]
                 r, g, b = markerColor.r, markerColor.g, markerColor.b
-            elseif ( nPlatesDB.FelExplosives and nPlates:IsPriority(frame.displayedUnit) ) then
+            elseif ( nPlatesDB.FelExplosives and nPlates:IsPriority(self.displayedUnit) ) then
                 r, g, b = nPlatesDB.FelExplosivesColor.r, nPlatesDB.FelExplosivesColor.g, nPlatesDB.FelExplosivesColor.b
-            elseif ( frame.optionTable.colorHealthBySelection ) then
-                if ( frame.optionTable.considerSelectionInCombatAsHostile and nPlates:IsOnThreatListWithPlayer(frame.displayedUnit) ) then
+            elseif ( self.optionTable.colorHealthBySelection ) then
+                if ( self.optionTable.considerSelectionInCombatAsHostile and nPlates:IsOnThreatListWithPlayer(self.displayedUnit) ) then
                     if ( nPlatesDB.TankMode ) then
-                        local target = frame.displayedUnit.."target"
-                        local isTanking, threatStatus = UnitDetailedThreatSituation("player", frame.displayedUnit)
+                        local target = self.displayedUnit.."target"
+                        local isTanking, threatStatus = UnitDetailedThreatSituation("player", self.displayedUnit)
                         if ( isTanking and threatStatus ) then
                             if ( threatStatus >= 3 ) then
                                 r, g, b = 0.0, 1.0, 0.0
@@ -192,9 +227,9 @@ hooksecurefunc("CompactUnitFrame_UpdateHealthColor", function(frame)
                         r, g, b = 1.0, 0.0, 0.0
                     end
                 else
-                    r, g, b = UnitSelectionColor(frame.unit, frame.optionTable.colorHealthWithExtendedColors)
+                    r, g, b = UnitSelectionColor(self.unit, self.optionTable.colorHealthWithExtendedColors)
                 end
-            elseif ( UnitIsFriend("player", frame.unit) ) then
+            elseif ( UnitIsFriend("player", self.unit) ) then
                 r, g, b = 0.0, 1.0, 0.0
             else
                 r, g, b = 1.0, 0.0, 0.0
@@ -202,223 +237,223 @@ hooksecurefunc("CompactUnitFrame_UpdateHealthColor", function(frame)
         end
     end
 
-        -- Execute Range Coloring
+    -- Execute Range Coloring
 
-    if ( nPlatesDB.ShowExecuteRange and nPlates:IsInExecuteRange(frame.displayedUnit) ) then
+    if ( nPlatesDB.ShowExecuteRange and nPlates:IsInExecuteRange(self.displayedUnit) ) then
         r, g, b = nPlatesDB.ExecuteColor.r, nPlatesDB.ExecuteColor.g, nPlatesDB.ExecuteColor.b
     end
 
-        -- Update Healthbar Color
+    -- Update Healthbar Color
 
-    local cR,cG,cB = frame.healthBar:GetStatusBarColor()
-    if ( r ~= cR or g ~= cG or b ~= cB ) then
+    local currentR, currentG, currentB = self.healthBar:GetStatusBarColor()
 
-        if ( frame.optionTable.colorHealthWithExtendedColors ) then
-            frame.selectionHighlight:SetVertexColor(r, g, b)
+    if ( r ~= currentR or g ~= currentG or b ~= currentB ) then
+        self.healthBar:SetStatusBarColor(r, g, b)
+
+        if ( self.optionTable.colorHealthWithExtendedColors ) then
+            self.selectionHighlight:SetVertexColor(r, g, b)
         else
-            frame.selectionHighlight:SetVertexColor(1.0, 1.0, 1.0)
+            self.selectionHighlight:SetVertexColor(1.0, 1.0, 1.0)
         end
 
-        frame.healthBar:SetStatusBarColor(r, g, b)
-    end
-
         -- Update Border Color
-
-    if ( frame.healthBar.beautyBorder ) then
-        nPlates:SetHealthBorderColor(frame, r, g, b)
+        nPlates:SetHealthBorderColor(self, r, g, b)
     end
-end)
+end
 
-    -- Update Border Color
+-- Update Border Color
 
-hooksecurefunc("CompactUnitFrame_UpdateSelectionHighlight", function(frame)
-    if ( frame:IsForbidden() ) then return end
-    if ( not frame.isNameplate ) then return end
+local function UpdateSelectionHighlight(self)
+    if ( self:IsForbidden() ) then return end
+    if ( not self.isNameplate ) then return end
 
-    if ( frame.healthBar.beautyBorder ) then
-        local r, g, b = frame.healthBar:GetStatusBarColor()
-        nPlates:SetHealthBorderColor(frame, r, g, b)
-    end
-end)
+    nPlates:SetHealthBorderColor(self)
+end
 
     -- Update Name
 
-hooksecurefunc("CompactUnitFrame_UpdateName", function(frame)
-    if ( frame:IsForbidden() ) then return end
-    if ( not frame.isNameplate ) then return end
+function nPlates.UpdateName(self)
+    if ( self:IsForbidden() ) then return end
+    if ( not self.isNameplate ) then return end
 
-        -- Hide Friendly Nameplates
-
-    if ( nPlatesDB.HideFriendly ) then
-        if ( UnitIsFriend(frame.displayedUnit, "player") and not
-             UnitCanAttack(frame.displayedUnit, "player") and not
-             UnitIsUnit(frame.displayedUnit, "player")
-        ) then
-            frame.healthBar:Hide()
-        else
-            frame.healthBar:Show()
-        end
+    if ( not ShouldShowName(self) ) then
+        self.name:Hide()
     else
-        frame.healthBar:Show()
-    end
-
-    if ( not ShouldShowName(frame) ) then
-        frame.name:Hide()
-    else
-
             -- Update Name Size
 
-        nPlates:UpdateNameSize(frame)
+        nPlates:UpdateNameSize(self)
 
             -- PvP Icon
 
-        local pvpIcon = nPlates:PvPIcon(frame.displayedUnit)
+        local pvpIcon = nPlates:PvPIcon(self.displayedUnit)
 
             -- Class Color Names
 
-        if ( UnitIsPlayer(frame.displayedUnit) ) then
-            local r, g, b = frame.healthBar:GetStatusBarColor()
-            frame.name:SetTextColor(r, g, b)
+        if ( UnitIsPlayer(self.displayedUnit) ) then
+            local r, g, b = self.healthBar:GetStatusBarColor()
+            self.name:SetTextColor(r, g, b)
         end
+
+        local name, server = UnitName(self.displayedUnit)
 
             -- Shorten Long Names
 
-        local name, realm = UnitName(frame.displayedUnit) or UNKNOWN
+        if ( nPlatesDB.AbrrevLongNames ) then
+            name = nPlates:Abbreviate(name)
+        end
+
+            -- Server Name
 
         if ( nPlatesDB.ShowServerName ) then
-            if realm then
-                name = name.." - "..realm
+            if ( server ) then
+                name = name.." - "..server
             end
-        end
-        if ( nPlatesDB.AbrrevLongNames ) then
-            name = nPlates:Abbrev(name, 20)
         end
 
             -- Level
 
         if ( nPlatesDB.ShowLevel ) then
-            local targetLevel = UnitLevel(frame.displayedUnit)
-            local difficultyColor = GetCreatureDifficultyColor(targetLevel)
-            local levelColor = nPlates:RGBToHex(difficultyColor.r, difficultyColor.g, difficultyColor.b)
+            local targetLevel = UnitLevel(self.displayedUnit)
 
             if ( targetLevel == -1 ) then
-                frame.name:SetFormattedText("%s%s", pvpIcon, name)
+                self.name:SetFormattedText("%s%s", pvpIcon, name)
             else
-                frame.name:SetFormattedText("%s%s%d|r %s", pvpIcon, levelColor, targetLevel, name)
+                local c = GetCreatureDifficultyColor(targetLevel)
+                --local difficultyColor = GetDifficultyColor(C_PlayerInfo.GetContentDifficultyCreatureForPlayer(self.displayedUnit))
+                local difficultyColor = c
+
+                self.name:SetFormattedText("%s%s%d|r %s", pvpIcon, ConvertRGBtoColorString(difficultyColor), targetLevel, name)
             end
         else
-            frame.name:SetFormattedText("%s%s", pvpIcon, name)
+            self.name:SetFormattedText("%s%s", pvpIcon, name)
         end
 
             -- Color Name To Threat Status
 
         if ( nPlatesDB.ColorNameByThreat ) then
-            local isTanking, threatStatus = UnitDetailedThreatSituation("player", frame.displayedUnit)
+            local isTanking, threatStatus = UnitDetailedThreatSituation("player", self.displayedUnit)
             if ( isTanking and threatStatus ) then
                 if ( threatStatus >= 3 ) then
-                    frame.name:SetTextColor(0.0, 1.0, 0.0)
+                    self.name:SetTextColor(0.0, 1.0, 0.0)
                 elseif ( threatStatus == 2 ) then
-                    frame.name:SetTextColor(1.0, 0.6, 0.2)
+                    self.name:SetTextColor(1.0, 0.6, 0.2)
                 end
             else
-                local target = frame.displayedUnit.."target"
+                local target = self.displayedUnit.."target"
                 if ( nPlates:UseOffTankColor(target) ) then
-                    frame.name:SetTextColor(nPlatesDB.OffTankColor.r, nPlatesDB.OffTankColor.g, nPlatesDB.OffTankColor.b)
+                    self.name:SetTextColor(nPlatesDB.OffTankColor.r, nPlatesDB.OffTankColor.g, nPlatesDB.OffTankColor.b)
                 end
             end
         end
     end
-end)
+end
 
     -- Skin Nameplate
 
-hooksecurefunc("DefaultCompactNamePlateFrameSetup", function(frame, options)
-    if ( frame:IsForbidden() ) then return end
+local function FrameSetup(self, options)
+    if ( self:IsForbidden() ) then return end
 
         -- Healthbar
 
-    frame.healthBar:SetStatusBarTexture(nPlates.statusBar)
-    frame.healthBar.barTexture:SetTexture(nPlates.statusBar)
+    self.healthBar:SetStatusBarTexture(nPlates.statusBar)
+    self.healthBar.barTexture:SetTexture(nPlates.statusBar)
 
         -- Healthbar Border
 
-    frame.healthBar.border:Hide()
+    self.healthBar.border:Hide()
 
-    if ( not frame.healthBar.beautyBorder ) then
-        nPlates:SetBorder(frame.healthBar)
+    if ( not self.healthBar.beautyBorder ) then
+        nPlates:SetBorder(self.healthBar)
     end
 
         -- Castbar
 
-    frame.castBar:SetHeight(12)
-    frame.castBar:SetStatusBarTexture(nPlates.statusBar)
+    self.CastBar:SetHeight(10)
+    self.CastBar:SetStatusBarTexture(nPlates.statusBar)
 
         -- Castbar Border
 
-    if ( not frame.castBar.beautyBorder ) then
-        nPlates:SetBorder(frame.castBar)
+    if ( not self.CastBar.beautyBorder ) then
+        self.CastBar.Border:ClearAllPoints()
+        nPlates:SetBorder(self.CastBar)
     end
 
         -- Spell Name
 
-    frame.castBar.Text:ClearAllPoints()
-    frame.castBar.Text:SetFontObject("nPlate_CastbarFont")
-    frame.castBar.Text:SetPoint("LEFT", frame.castBar, 2, 0)
+   
+    self.CastBar.Text:ClearAllPoints()
+    self.CastBar.Text:SetFontObject("nPlate_CastbarFont")
+    self.CastBar.Text:SetPoint("LEFT", self.CastBar, 2, 0)
 
         -- Set Castbar Timer
 
-    if ( not frame.castBar.CastTime ) then
-        frame.castBar.CastTime = frame.castBar:CreateFontString(nil, "OVERLAY")
-        frame.castBar.CastTime:SetFontObject("nPlate_CastbarTimerFont")
-        frame.castBar.CastTime:SetPoint("BOTTOMRIGHT", frame.castBar.Icon)
+    if ( not self.CastBar.CastTime ) then
+        self.CastBar.CastTime = self.CastBar:CreateFontString(nil, "OVERLAY")
+        self.CastBar.CastTime:SetFontObject("nPlate_CastbarTimerFont")
+        self.CastBar.CastTime:SetPoint("BOTTOMRIGHT", self.CastBar.Icon)
     end
 
         -- Castbar Icon Border
 
-    if ( not frame.castBar.Icon.beautyBorder ) then
-        nPlates:SetBorder(frame.castBar.Icon)
+    if ( not self.CastBar.Icon.beautyBorder ) then
+        nPlates:SetBorder(self.CastBar.Icon)
     end
 
         -- Castbar Icon Background
 
-    if ( not frame.castBar.Background ) then
-        frame.castBar.Background = frame.castBar:CreateTexture("$parent_Background", "BACKGROUND")
-        frame.castBar.Background:SetAllPoints(frame.castBar.Icon)
-        frame.castBar.Background:SetTexture([[Interface\Icons\Ability_DualWield]])
-        frame.castBar.Background:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+    if ( not self.CastBar.Background ) then
+        self.CastBar.Background = self.CastBar:CreateTexture("$parent_Background", "BACKGROUND")
+        self.CastBar.Background:SetAllPoints(self.CastBar.Icon)
+        self.CastBar.Background:SetTexture([[Interface\Icons\Ability_DualWield]])
+       self.CastBar.Background:SetTexCoord(0.1, 0.9, 0.1, 0.9)
     end
 
         -- Update Castbar
 
-    frame.castBar:SetScript("OnValueChanged", function(self, value)
-        UpdateCastbarTimer(frame)
+    self.CastBar:SetScript("OnValueChanged", function()
+        UpdateCastbarTimer(self)
     end)
 
-    frame.castBar:SetScript("OnShow", function(self)
-        UpdateCastbar(frame)
+    self.CastBar:SetScript("OnShow", function()
+        UpdateCastbar(self)
     end)
-end)
 
-hooksecurefunc("DefaultCompactNamePlateFrameAnchorInternal", function(frame, setupOptions)
-    if ( frame:IsForbidden() ) then return end
+
+end
+
+local function SetupAnchors(self, setupOptions)
+    if ( self:IsForbidden() ) then return end
+    if ( not self.isNameplate ) then return end
 
         -- Healthbar
 
-    frame.healthBar:SetHeight(12)
+    self.healthBar:SetHeight(11)
 
+    
     if ( setupOptions.healthBarAlpha ~= 1 ) then
-        frame.healthBar:SetPoint("BOTTOMLEFT", frame.castBar, "TOPLEFT", 0, 4.2)
-        frame.healthBar:SetPoint("BOTTOMRIGHT", frame.castBar, "TOPRIGHT", 0, 4.2)
+        self.healthBar:SetPoint("BOTTOMLEFT", self.castBar, "TOPLEFT", 0, 5)
+        self.healthBar:SetPoint("BOTTOMRIGHT", self.castBar, "TOPRIGHT", 0, 5)
     end
-
+    
         -- Castbar
 
-    frame.castBar.Icon:SetSize(24, 24)
-    frame.castBar.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
-    frame.castBar.Icon:ClearAllPoints()
-    frame.castBar.Icon:SetPoint("BOTTOMLEFT", frame.castBar, "BOTTOMRIGHT", 4.9, 0)
+    self.CastBar.Icon:SetSize(26, 26)
+    self.CastBar.Icon:SetTexCoord(0.1, 0.9, 0.1, 0.9)
+    self.CastBar.Icon:ClearAllPoints()
+    self.CastBar.Icon:SetIgnoreParentAlpha(false)
+    self.CastBar.Icon:SetPoint("BOTTOMLEFT", self.castBar, "BOTTOMRIGHT", 4.9, 0)
 
         -- Hide Border Shield
 
-    frame.castBar.BorderShield:ClearAllPoints()
-end)
+    self.CastBar.BorderShield:ClearAllPoints()
+end
+
+    -- Setup Hooks
+
+hooksecurefunc("CompactUnitFrame_OnEvent", CUF_OnEvents)
+hooksecurefunc("CompactUnitFrame_UpdateStatusText", UpdateStatusText)
+hooksecurefunc("CompactUnitFrame_UpdateHealthColor", UpdateHealthColor)
+hooksecurefunc("CompactUnitFrame_UpdateSelectionHighlight", UpdateSelectionHighlight)
+hooksecurefunc("CompactUnitFrame_UpdateName", nPlates.UpdateName)
+hooksecurefunc("DefaultCompactNamePlateFrameSetup", FrameSetup)
+hooksecurefunc("DefaultCompactNamePlateFrameAnchorInternal", SetupAnchors)

@@ -1,10 +1,10 @@
 <Ui>
-      <FontFamily name="nPlate_NameFont8" virtual="true">
+    <FontFamily name="nPlate_NameFont8" virtual="true">
         <Member alphabet="roman">
             <Font font="Fonts\FRIZQT__.TTF" height="8">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -14,7 +14,7 @@
             <Font font="Fonts\2002.TTF" height="8">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -24,7 +24,7 @@
             <Font font="Fonts\ARKai_T.ttf" height="8">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -34,7 +34,7 @@
             <Font font="Fonts\blei00d.TTF" height="8">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -44,7 +44,7 @@
             <Font font="Fonts\FRIZQT___CYR.TTF" height="8">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -57,7 +57,7 @@
             <Font font="Fonts\FRIZQT__.TTF" height="9">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -67,7 +67,7 @@
             <Font font="Fonts\2002.TTF" height="9">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -77,7 +77,7 @@
             <Font font="Fonts\ARKai_T.ttf" height="9">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -87,7 +87,7 @@
             <Font font="Fonts\blei00d.TTF" height="9">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -97,7 +97,7 @@
             <Font font="Fonts\FRIZQT___CYR.TTF" height="9">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -110,7 +110,7 @@
             <Font font="Fonts\FRIZQT__.TTF" height="10">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -120,7 +120,7 @@
             <Font font="Fonts\2002.TTF" height="10">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -130,7 +130,7 @@
             <Font font="Fonts\ARKai_T.ttf" height="10">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -140,7 +140,7 @@
             <Font font="Fonts\blei00d.TTF" height="10">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -150,7 +150,7 @@
             <Font font="Fonts\FRIZQT___CYR.TTF" height="10">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -163,7 +163,7 @@
             <Font font="Fonts\FRIZQT__.TTF" height="11">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -173,7 +173,7 @@
             <Font font="Fonts\2002.TTF" height="11">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -183,7 +183,7 @@
             <Font font="Fonts\ARKai_T.ttf" height="11">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -193,7 +193,7 @@
             <Font font="Fonts\blei00d.TTF" height="11">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -203,7 +203,7 @@
             <Font font="Fonts\FRIZQT___CYR.TTF" height="11">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -216,7 +216,7 @@
             <Font font="Fonts\FRIZQT__.TTF" height="12">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -226,7 +226,7 @@
             <Font font="Fonts\2002.TTF" height="12">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -236,7 +236,7 @@
             <Font font="Fonts\ARKai_T.ttf" height="12">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -246,7 +246,7 @@
             <Font font="Fonts\blei00d.TTF" height="12">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -257,7 +257,7 @@
                 <Shadow>
                     <Offset>
                     <Color r="0" g="0" b="0"/>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                 </Shadow>
             </Font>
@@ -268,7 +268,7 @@
             <Font font="Fonts\FRIZQT__.TTF" height="13">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -278,7 +278,7 @@
             <Font font="Fonts\2002.TTF" height="13">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -288,7 +288,7 @@
             <Font font="Fonts\ARKai_T.ttf" height="13">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -298,7 +298,7 @@
             <Font font="Fonts\blei00d.TTF" height="13">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -308,7 +308,7 @@
             <Font font="Fonts\FRIZQT___CYR.TTF" height="13">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -320,7 +320,7 @@
             <Font font="Fonts\FRIZQT__.TTF" height="14">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -330,7 +330,7 @@
             <Font font="Fonts\2002.TTF" height="14">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -340,7 +340,7 @@
             <Font font="Fonts\ARKai_T.ttf" height="14">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -350,7 +350,7 @@
             <Font font="Fonts\blei00d.TTF" height="14">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -360,19 +360,20 @@
             <Font font="Fonts\FRIZQT___CYR.TTF" height="14">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
             </Font>
         </Member>
     </FontFamily>
-        <FontFamily name="nPlate_NameFont15" virtual="true">
+
+    <FontFamily name="nPlate_NameFont15" virtual="true">
         <Member alphabet="roman">
             <Font font="Fonts\FRIZQT__.TTF" height="15">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -382,7 +383,7 @@
             <Font font="Fonts\2002.TTF" height="15">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -392,7 +393,7 @@
             <Font font="Fonts\ARKai_T.ttf" height="15">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -402,7 +403,7 @@
             <Font font="Fonts\blei00d.TTF" height="15">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -412,7 +413,7 @@
             <Font font="Fonts\FRIZQT___CYR.TTF" height="15">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -424,7 +425,7 @@
             <Font font="Fonts\FRIZQT__.TTF" height="16">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -434,7 +435,7 @@
             <Font font="Fonts\2002.TTF" height="16">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -444,7 +445,7 @@
             <Font font="Fonts\ARKai_T.ttf" height="16">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -454,7 +455,7 @@
             <Font font="Fonts\blei00d.TTF" height="16">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -464,7 +465,7 @@
             <Font font="Fonts\FRIZQT___CYR.TTF" height="16">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -476,7 +477,7 @@
             <Font font="Fonts\FRIZQT__.TTF" height="17">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -486,7 +487,7 @@
             <Font font="Fonts\2002.TTF" height="17">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -496,7 +497,7 @@
             <Font font="Fonts\ARKai_T.ttf" height="17">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -506,7 +507,7 @@
             <Font font="Fonts\blei00d.TTF" height="17">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -516,7 +517,7 @@
             <Font font="Fonts\FRIZQT___CYR.TTF" height="17">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -528,7 +529,7 @@
             <Font font="Fonts\FRIZQT__.TTF" height="18">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -538,7 +539,7 @@
             <Font font="Fonts\2002.TTF" height="18">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -548,7 +549,7 @@
             <Font font="Fonts\ARKai_T.ttf" height="18">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -558,7 +559,7 @@
             <Font font="Fonts\blei00d.TTF" height="18">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -568,7 +569,7 @@
             <Font font="Fonts\FRIZQT___CYR.TTF" height="18">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -580,7 +581,7 @@
             <Font font="Fonts\FRIZQT__.TTF" height="19">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -590,7 +591,7 @@
             <Font font="Fonts\2002.TTF" height="19">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -600,7 +601,7 @@
             <Font font="Fonts\ARKai_T.ttf" height="19">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -610,7 +611,7 @@
             <Font font="Fonts\blei00d.TTF" height="19">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -620,7 +621,7 @@
             <Font font="Fonts\FRIZQT___CYR.TTF" height="19">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -632,7 +633,7 @@
             <Font font="Fonts\FRIZQT__.TTF" height="20">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -642,7 +643,7 @@
             <Font font="Fonts\2002.TTF" height="20">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -652,7 +653,7 @@
             <Font font="Fonts\ARKai_T.ttf" height="20">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -662,7 +663,7 @@
             <Font font="Fonts\blei00d.TTF" height="20">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -672,7 +673,7 @@
             <Font font="Fonts\FRIZQT___CYR.TTF" height="20">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -684,7 +685,7 @@
             <Font font="Fonts\FRIZQT__.TTF" height="21">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -694,7 +695,7 @@
             <Font font="Fonts\2002.TTF" height="21">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -704,7 +705,7 @@
             <Font font="Fonts\ARKai_T.ttf" height="21">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -714,7 +715,7 @@
             <Font font="Fonts\blei00d.TTF" height="21">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -724,7 +725,7 @@
             <Font font="Fonts\FRIZQT___CYR.TTF" height="21">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -736,7 +737,7 @@
             <Font font="Fonts\FRIZQT__.TTF" height="22">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -746,7 +747,7 @@
             <Font font="Fonts\2002.TTF" height="22">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -756,7 +757,7 @@
             <Font font="Fonts\ARKai_T.ttf" height="22">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -766,7 +767,7 @@
             <Font font="Fonts\blei00d.TTF" height="22">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -776,7 +777,7 @@
             <Font font="Fonts\FRIZQT___CYR.TTF" height="22">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -788,7 +789,7 @@
             <Font font="Fonts\FRIZQT__.TTF" height="23">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -798,7 +799,7 @@
             <Font font="Fonts\2002.TTF" height="23">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -808,7 +809,7 @@
             <Font font="Fonts\ARKai_T.ttf" height="23">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -818,7 +819,7 @@
             <Font font="Fonts\blei00d.TTF" height="23">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -828,7 +829,7 @@
             <Font font="Fonts\FRIZQT___CYR.TTF" height="23">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -840,7 +841,7 @@
             <Font font="Fonts\FRIZQT__.TTF" height="24">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -850,7 +851,7 @@
             <Font font="Fonts\2002.TTF" height="24">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -860,7 +861,7 @@
             <Font font="Fonts\ARKai_T.ttf" height="24">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -870,7 +871,7 @@
             <Font font="Fonts\blei00d.TTF" height="24">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -880,7 +881,7 @@
             <Font font="Fonts\FRIZQT___CYR.TTF" height="24">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -892,7 +893,7 @@
             <Font font="Fonts\FRIZQT__.TTF" height="25">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -902,7 +903,7 @@
             <Font font="Fonts\2002.TTF" height="25">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -912,7 +913,7 @@
             <Font font="Fonts\ARKai_T.ttf" height="25">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -922,7 +923,7 @@
             <Font font="Fonts\blei00d.TTF" height="25">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -932,7 +933,7 @@
             <Font font="Fonts\FRIZQT___CYR.TTF" height="25">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -944,7 +945,7 @@
             <Font font="Fonts\FRIZQT__.TTF" height="26">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -954,7 +955,7 @@
             <Font font="Fonts\2002.TTF" height="26">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -964,7 +965,7 @@
             <Font font="Fonts\ARKai_T.ttf" height="26">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -974,7 +975,7 @@
             <Font font="Fonts\blei00d.TTF" height="26">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -984,7 +985,7 @@
             <Font font="Fonts\FRIZQT___CYR.TTF" height="26">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -996,7 +997,7 @@
             <Font font="Fonts\FRIZQT__.TTF" height="27">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -1006,7 +1007,7 @@
             <Font font="Fonts\2002.TTF" height="27">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -1016,7 +1017,7 @@
             <Font font="Fonts\ARKai_T.ttf" height="27">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -1026,7 +1027,7 @@
             <Font font="Fonts\blei00d.TTF" height="27">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -1036,7 +1037,7 @@
             <Font font="Fonts\FRIZQT___CYR.TTF" height="27">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -1048,7 +1049,7 @@
             <Font font="Fonts\FRIZQT__.TTF" height="28">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -1058,7 +1059,7 @@
             <Font font="Fonts\2002.TTF" height="28">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -1068,7 +1069,7 @@
             <Font font="Fonts\ARKai_T.ttf" height="28">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -1078,7 +1079,7 @@
             <Font font="Fonts\blei00d.TTF" height="28">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -1088,7 +1089,7 @@
             <Font font="Fonts\FRIZQT___CYR.TTF" height="28">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -1100,7 +1101,7 @@
             <Font font="Fonts\FRIZQT__.TTF" height="29">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -1110,7 +1111,7 @@
             <Font font="Fonts\2002.TTF" height="29">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -1120,7 +1121,7 @@
             <Font font="Fonts\ARKai_T.ttf" height="29">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -1130,7 +1131,7 @@
             <Font font="Fonts\blei00d.TTF" height="29">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -1140,7 +1141,7 @@
             <Font font="Fonts\FRIZQT___CYR.TTF" height="29">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -1152,7 +1153,7 @@
             <Font font="Fonts\FRIZQT__.TTF" height="30">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -1162,7 +1163,7 @@
             <Font font="Fonts\2002.TTF" height="30">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -1172,7 +1173,7 @@
             <Font font="Fonts\ARKai_T.ttf" height="30">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -1182,7 +1183,7 @@
             <Font font="Fonts\blei00d.TTF" height="30">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -1192,7 +1193,7 @@
             <Font font="Fonts\FRIZQT___CYR.TTF" height="30">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -1204,7 +1205,7 @@
             <Font font="Fonts\FRIZQT__.TTF" height="31">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -1214,7 +1215,7 @@
             <Font font="Fonts\2002.TTF" height="31">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -1224,7 +1225,7 @@
             <Font font="Fonts\ARKai_T.ttf" height="31">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -1234,7 +1235,7 @@
             <Font font="Fonts\blei00d.TTF" height="31">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -1244,7 +1245,7 @@
             <Font font="Fonts\FRIZQT___CYR.TTF" height="31">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -1256,7 +1257,7 @@
             <Font font="Fonts\FRIZQT__.TTF" height="32">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -1266,7 +1267,7 @@
             <Font font="Fonts\2002.TTF" height="32">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -1276,7 +1277,7 @@
             <Font font="Fonts\ARKai_T.ttf" height="32">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -1286,7 +1287,7 @@
             <Font font="Fonts\blei00d.TTF" height="32">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -1296,7 +1297,7 @@
             <Font font="Fonts\FRIZQT___CYR.TTF" height="32">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -1308,7 +1309,7 @@
             <Font font="Fonts\FRIZQT__.TTF" height="33">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -1318,7 +1319,7 @@
             <Font font="Fonts\2002.TTF" height="33">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -1328,7 +1329,7 @@
             <Font font="Fonts\ARKai_T.ttf" height="33">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -1338,7 +1339,7 @@
             <Font font="Fonts\blei00d.TTF" height="33">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -1348,7 +1349,7 @@
             <Font font="Fonts\FRIZQT___CYR.TTF" height="33">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -1360,7 +1361,7 @@
             <Font font="Fonts\FRIZQT__.TTF" height="34">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -1370,7 +1371,7 @@
             <Font font="Fonts\2002.TTF" height="34">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -1380,7 +1381,7 @@
             <Font font="Fonts\ARKai_T.ttf" height="34">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -1390,7 +1391,7 @@
             <Font font="Fonts\blei00d.TTF" height="34">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -1400,7 +1401,7 @@
             <Font font="Fonts\FRIZQT___CYR.TTF" height="34">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -1412,7 +1413,7 @@
             <Font font="Fonts\FRIZQT__.TTF" height="35">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -1422,7 +1423,7 @@
             <Font font="Fonts\2002.TTF" height="35">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -1432,7 +1433,7 @@
             <Font font="Fonts\ARKai_T.ttf" height="35">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -1442,7 +1443,7 @@
             <Font font="Fonts\blei00d.TTF" height="35">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>
@@ -1452,7 +1453,7 @@
             <Font font="Fonts\FRIZQT___CYR.TTF" height="35">
                 <Shadow>
                     <Offset>
-                        <AbsDimension x="0.64" y="-0.64"/>
+                        <AbsDimension x="1" y="-1"/>
                     </Offset>
                     <Color r="0" g="0" b="0"/>
                 </Shadow>

@@ -1,4 +1,4 @@
-local addon, nPlates = ...
+local _, nPlates = ...
 
 local L = {}
 nPlates.L = L
@@ -25,13 +25,16 @@ L.FelExplosivesColor = "Explosive Color"
 L.FelExplosivesMobName = "Explosives"
 L.FrameOptionsLabel = "Frame Options"
 L.FriendlyClassColors = "Display Friendly Class Colors"
+L.HealthOptions = "Health Options"
 L.HealthBoth = "Health - Percent"
+L.PercentHealth = "Precent - Health"
 L.HealthDisabled = "Disabled"
 L.HealthPercOnly = "Percent Only"
 L.HealthValueOnly = "Health Only"
 L.HideFriendly = "Hide Friendly Nameplates"
 L.NameOptionsLabel = "Name Options"
 L.NameplateAlpha = "Min Alpha"
+L.NameplateOccludedAlpha = "Occluded Alpha"
 L.NameplateScale = "Scale"
 L.NameplateRange = "Range"
 L.NameSizeLabel = "Size"
