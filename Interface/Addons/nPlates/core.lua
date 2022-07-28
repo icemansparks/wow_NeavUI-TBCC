@@ -132,7 +132,7 @@ end
 
 local function UpdateStatusText(self)
     if ( self:IsForbidden() ) then return end
-    if ( self.statusText ) then return end
+    --if ( self.statusText ) then return end
 
     if ( not self.healthBar.value ) then
         self.healthBar.value = self.healthBar:CreateFontString("$parentHeathValue", "OVERLAY")
