@@ -389,6 +389,11 @@ local function FrameSetup(self, options)
     self.CastBar.Text:SetFontObject("nPlate_CastbarFont")
     self.CastBar.Text:SetPoint("LEFT", self.CastBar, 2, 0)
 
+        -- set castbar icon position
+        
+     self.CastBar.Icon:SetPoint("RIGHT", self.CastBar, 32, 8)
+     self.CastBar.Icon:SetSize(26, 26)
+
         -- Set Castbar Timer
 
     if ( not self.CastBar.CastTime ) then
