@@ -11,7 +11,7 @@ nBuff
 
 nMainbar
 
-![nmainbar-wotlk-classic](https://user-images.githubusercontent.com/11578975/181490020-5c4cf712-d353-4a54-a682-d92fac4372f3.png)
+![nMainbar-wotlk-classic](https://user-images.githubusercontent.com/11578975/181490784-a1ac7d04-f888-46dc-9f8a-5dacc43a3dd7.png)
 
 nPlates
 
@@ -24,3 +24,8 @@ nPower
 oUF Neav (Thick Frames mod)
 
 ![ouf_neav-thick-frames-wotlk-classic](https://user-images.githubusercontent.com/11578975/181490149-d8c10110-731a-4013-92ed-937b0478d108.png)
+
+nTooltip
+
+![nTooltip-wotlk-classic](https://user-images.githubusercontent.com/11578975/181490845-90174d49-32b7-412d-a029-95b966ef8c60.png)
+
