@@ -312,6 +312,9 @@ function nPlates.UpdateName(self)
 
             -- Level
 
+            -- hide default nameplate level frame   
+            self.LevelFrame.levelText:Hide()
+
         if ( nPlatesDB.ShowLevel ) then
             local targetLevel = UnitLevel(self.displayedUnit)
 
