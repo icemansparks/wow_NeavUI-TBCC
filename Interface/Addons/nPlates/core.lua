@@ -373,6 +373,7 @@ local function FrameSetup(self, options)
 
     self.CastBar:SetHeight(10)
     self.CastBar:SetStatusBarTexture(nPlates.statusBar)
+    self.CastBar:SetPoint("TOPLEFT", self.healthBar, "BOTTOMLEFT", 0, -5)
 
         -- Castbar Border
 
