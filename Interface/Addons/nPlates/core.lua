@@ -456,4 +456,5 @@ hooksecurefunc("CompactUnitFrame_UpdateHealthColor", UpdateHealthColor)
 hooksecurefunc("CompactUnitFrame_UpdateSelectionHighlight", UpdateSelectionHighlight)
 hooksecurefunc("CompactUnitFrame_UpdateName", nPlates.UpdateName)
 hooksecurefunc("DefaultCompactNamePlateFrameSetup", FrameSetup)
-hooksecurefunc("DefaultCompactNamePlateFrameAnchorInternal", SetupAnchors)
+--hooksecurefunc("DefaultCompactNamePlateFrameAnchorInternal", SetupAnchors)
+hooksecurefunc(NamePlateDriverFrame,"OnNamePlateCreated",SetupAnchors);
