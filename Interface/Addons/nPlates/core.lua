@@ -279,6 +279,11 @@ function nPlates.UpdateName(self)
     if ( not ShouldShowName(self) ) then
         self.name:Hide()
     else
+
+            -- center Name
+
+        self.name:SetPoint("CENTER", self.healthBar, "CENTER", 0, 0)
+
             -- Update Name Size
 
         nPlates:UpdateNameSize(self)
