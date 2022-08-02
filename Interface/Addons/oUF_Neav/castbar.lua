@@ -42,6 +42,9 @@ local playerCastbarHolder = CreateAnchor("player","Player")
 local targetCastbarHolder = CreateAnchor("target","Target")
 local petCastbarHolder = CreateAnchor("pet","Pet")
 
+    -- hide default castbar
+    CastingBarFrame:UnregisterAllEvents()
+
     -- Create the castbars
 
 function ns.CreateCastbars(self, unit)
